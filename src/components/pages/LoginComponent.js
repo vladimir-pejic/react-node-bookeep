@@ -1,14 +1,21 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
 import LoginForm from '../forms/LoginForm';
 
+class LoginComponent extends React.Component {
 
-const LoginComponent = () => (
-    <div className={'ui container'}>
-        <h1>Login page</h1>
+    submit = data => {
+        console.log(data);
+    };
 
-        <LoginForm />
-    </div>
-);
+    render() {
+        return(
+            <div className={'ui container'}>
+                <h1>Login page</h1>
+
+                <LoginForm submit={this.submit}/>
+            </div>
+        )
+    }
+}
 
 export default LoginComponent;
